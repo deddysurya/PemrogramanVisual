@@ -1,0 +1,53 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h1> List Window </h1>
+        <div id="List"></div>
+    </body>
+
+    <script>
+        const electron = require("electron");
+        const {ipcRenderer} = electron;
+        ipcRenderer.send("appointment:request:list");
+
+        ipcRenderer.on("appointment:request:list", event, appointment =>
+        {
+            const listDiv = document.getElementById("List");
+            appointment.forEach(appointment => 
+            {
+             const appointmentDiv = document.createElement("div");
+             const nameParagraph = document.createElement("P");
+             nameParagraph.innerHTML= `Name: ${appointment.name}`;
+
+             const numberParagraph = document.createElement("P");
+             numberParagraph.innerHTML= `Phone Number: ${appointment.number}`;
+
+             const hourParagraph = document.createElement("P");
+             hourParagraph.innerHTML= `Date: ${appointment.date}`;
+
+             const dateParagraph = document.createElement("P");
+             dateParagraph.innerHTML= `Date: ${appointment.date}`;
+
+             const symptomsParagraph = document.createElement("P");
+             symtomsParagraph.innerHTML= `Symtoms: ${appointment.symptoms}`;
+
+             const doneParagraph = document.createElement("P");
+             doneParagraph.innerHTML= `Done: ${appointment.done ? "Yes" : "No"}`;
+
+             const hr = document.createElement("hr");
+
+             appointmentDiv.appendChild(nameParagraph);
+             appointmentDiv.appendChild(numberParagraph);
+             appointmentDiv.appendChild(hourParagraph);
+             appointmentDiv.appendChild(dateParagraph);
+             appointmentDiv.appendChild(symtomsParagraph);
+             appointmentDiv.appendChild(hr);
+
+             listDiv.appointmentDiv;
+
+            });
+        });
+    </script>
+</html>
