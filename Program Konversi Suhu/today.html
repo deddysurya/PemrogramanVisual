@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>Konverter</title>
+</head>
+<body> 
+    <div class="konvert-box">
+        <h1>Konverter</h1>
+        <div class="textbox">
+            <select name="Konversi" id="Konversi">
+                <option>Pilih Suhu yang di Inginkan</option>
+                <option value="cf">Celsius > Fahrenheit</option>
+                <option value="cr">Celsius > Reamur</option>
+                <option value="fc">Fahrenheit > Celsius</option>
+                <option value="fr">Fahrenheit > Reamur</option>
+                <option value="rc">Reamur > Celsius</option>
+                <option value="rf">Reamur > Fahrenheit</option>
+            </select>
+        </div>
+
+        <div class="textbox">
+            <input type="text" placeholder="Jumlah Suhu" id="no" name="" value="">
+        </div>
+
+        <input class="button" type="button" name="" value="Konvert"  onclick="suhu ()">
+
+        <div class="textbox">
+            <input type="text" placeholder="Hasil" id="hasil" name="" value="">
+        </div>
+        
+    </div>
+    
+</body>
+
+<script>
+    function suhu (){
+        var no = document.getElementById ('no').value;
+        var Konversi = document.getElementById ('Konversi').value;
+        var hasil;
+        
+        if (Konversi == "cf") {
+            hasil = ((9/5)* parseInt(no)) + 32;
+        }else if (Konversi == "cr") {
+            hasil = (4/5)* parseInt (no);
+        }else if (Konversi == "fc") {
+            hasil = (parseInt (no) - 32 ) / (9/5);
+        }else if (Konversi == "fr") {
+            hasil = (parseInt (no) - 32 ) / (9/4);
+        }else if (Konversi == "rc") {
+            hasil = (parseInt (no)) / (4/5);
+        }else if (Konversi == "rf") {
+            hasil = ((9/4) * parseInt(no)) + 32;
+        }else {
+            hasil = "Tidak Ada";
+        }
+        document.getElementById("hasil").value = hasil;
+    }
+
+</script>
+
+</html>
