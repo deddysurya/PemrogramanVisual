@@ -1,0 +1,17 @@
+{
+  "name": "visual",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": " set ELECTRON_DISABLE_SECURITY_WARNINGS=true && electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "electron": "^8.2.1",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}
